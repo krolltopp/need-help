@@ -17,6 +17,6 @@ server.route({
     method: 'GET',
     path: '/',
     handler: (request: any, reply: any) => {
-        return 'Hello, world!';
+        return 'NEED HELP';
     },
 });
