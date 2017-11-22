@@ -1,0 +1,28 @@
+{
+  "name": "need-help",
+  "version": "1.0.0",
+  "description": "Backend for Need Help App",
+  "main": "app.js",
+  "scripts": {
+    "clean": "rimraf dist",
+    "lint": "tslint -p .",
+    "compile": "npm run lint && tsc -p tsconfig.json",
+    "build": "npm run clean && npm run compile",
+    "go": "npm run compile && node ./dist/app.js",
+    "dev": "nodemon -e ts --exec \"npm run go\"",
+    "start": "npm run build && node ./dist/app.js"
+  },
+  "author": "Anders Froyhaug",
+  "license": "ISC",
+  "dependencies": {
+    "@types/node": "^8.0.53",
+    "hapi": "^17.0.2",
+    "log4js": "^2.3.12"
+  },
+  "devDependencies": {
+    "nodemon": "^1.12.1",
+    "rimraf": "^2.6.2",
+    "tslint": "^5.8.0",
+    "typescript": "^2.6.1"
+  }
+}
