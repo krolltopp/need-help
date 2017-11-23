@@ -1,13 +1,7 @@
 version: '2'
 
 services:
-  need-help:
-    image:  need-help:latest
-    ports:
-      - 80:3000
-    environment:
-      - MONGODB_HOST=mongodb
-
+  
   mongodb:
     image: need-help-mongodb:latest
     ports:

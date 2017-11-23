@@ -1,0 +1,10 @@
+FROM mongo:3.4
+
+ENV AUTH yes
+ENV STORAGE_ENGINE wiredTiger
+ENV JOURNALING yes
+
+ADD mongodb.sh /mongodb.sh
+ADD set-mongodb-password.sh /set-mongodb-password.sh
+
+CMD ["/mongodb.sh"]
