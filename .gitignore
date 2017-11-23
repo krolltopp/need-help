@@ -66,4 +66,7 @@ typings/
 # dist
 dist/
 
+# db
+db_data/
+
 # End of https://www.gitignore.io/api/node
