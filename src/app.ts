@@ -18,7 +18,7 @@ setTimeout(() => {
     logger.error('Failed starting server :', err);
     process.exit(1);
   });
-}, 5000);
+}, 10000);
 
 async function configAndStartServer() {
   await DbManager.connect();

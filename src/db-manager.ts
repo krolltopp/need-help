@@ -17,10 +17,12 @@ logger.debug('Mongodb connection : ', connUri);
 class DbManager {
 
   public static connect(): mongoose.MongooseThenable {
+    logger.debug('MONGODB_APPLICATION_USER : ', process.env.MONGODB_APPLICATION_USER);
+    logger.debug('MONGODB_APPLICATION_PASS : ', process.env.MONGODB_APPLICATION_PASS);
     try {
       return mongoose.connect(connUri, {
         user: process.env.MONGODB_APPLICATION_USER || 'needhelp',
-        pass: process.env.MONGODB_APPLICATION_PASS || '_needhelp_',
+        pass: process.env.MONGODB_APPLICATION_PASS || '_need_help_',
         useMongoClient: true,
       });
     } catch (error) {
