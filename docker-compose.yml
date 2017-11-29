@@ -7,6 +7,9 @@ services:
       - 80:3000
     environment:
       - MONGODB_HOST=mongodb
+      - MONGODB_APPLICATION_DATABASE
+      - MONGODB_APPLICATION_USER
+      - MONGODB_APPLICATION_PASS
     depends_on:
       - mongodb
 

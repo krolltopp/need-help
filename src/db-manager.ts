@@ -21,8 +21,8 @@ class DbManager {
     logger.debug('MONGODB_APPLICATION_PASS : ', process.env.MONGODB_APPLICATION_PASS);
     try {
       return mongoose.connect(connUri, {
-        user: process.env.MONGODB_APPLICATION_USER || 'needhelp',
-        pass: process.env.MONGODB_APPLICATION_PASS || '_need_help_',
+        user: process.env.MONGODB_APPLICATION_USER,
+        pass: process.env.MONGODB_APPLICATION_PASS,
         useMongoClient: true,
       });
     } catch (error) {

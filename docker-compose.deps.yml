@@ -10,7 +10,7 @@ services:
       - ./db_data_dev:/data/db
     environment:
       - MONGODB_ADMIN_USER
-      - MONGODB_ADMIN_PASS=
+      - MONGODB_ADMIN_PASS
       - MONGODB_APPLICATION_DATABASE
       - MONGODB_APPLICATION_USER
       - MONGODB_APPLICATION_PASS

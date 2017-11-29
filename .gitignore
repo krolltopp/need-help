@@ -72,5 +72,6 @@ db_data_dev/
 
 #env
 .env
+.dev.env
 
 # End of https://www.gitignore.io/api/node
