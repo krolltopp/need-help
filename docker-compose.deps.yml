@@ -3,14 +3,14 @@ version: '2'
 services:
 
   mongodb:
-    image: need-help-mongodb:latest
+    image: need-help-mongodb-dev:latest
     ports:
       - 27017:27017
     volumes:
-      - ./db_data:/data/db
+      - ./db_data_dev:/data/db
     environment:
-      - MONGODB_ADMIN_USER=admin
-      - MONGODB_ADMIN_PASS=_need_help_
-      - MONGODB_APPLICATION_DATABASE=needhelp
-      - MONGODB_APPLICATION_USER=needhelp
-      - MONGODB_APPLICATION_PASS=_needhelp_
+      - MONGODB_ADMIN_USER
+      - MONGODB_ADMIN_PASS=
+      - MONGODB_APPLICATION_DATABASE
+      - MONGODB_APPLICATION_USER
+      - MONGODB_APPLICATION_PASS

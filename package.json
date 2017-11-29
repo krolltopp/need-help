@@ -18,12 +18,14 @@
     "@types/node": "^8.0.53",
     "bluebird": "^3.5.1",
     "hapi": "^17.1.0",
+    "joi": "^13.0.2",
     "lodash": "^4.17.4",
     "log4js": "^2.3.12",
     "mongoose": "^4.13.4"
   },
   "devDependencies": {
     "@types/bluebird": "^3.5.18",
+    "@types/joi": "^13.0.0",
     "@types/lodash": "^4.14.85",
     "@types/mongodb": "^2.2.16",
     "@types/mongoose": "^4.7.28",

@@ -1,20 +1,32 @@
-import * as Mongoose from 'mongoose';
+import * as mongoose from 'mongoose';
 import * as Bluebird from 'bluebird';
+import * as Log4js from 'log4js';
+
+const logger = Log4js.getLogger('db-manager');
+logger.level = 'debug';
 
 const mongoDbHost: string = process.env.MONGODB_HOST || 'localhost';
 const databaseName: string = 'needhelp';
-const connUri = 'mongodb://user:pass@' + mongoDbHost + '/' + databaseName;
+const connUri: string = 'mongodb://user:pass@' + mongoDbHost + '/' + databaseName;
 
-(Mongoose as any).Promise = Bluebird;
+logger.debug('Mongodb connection : ', connUri);
+
+// (Mongoose as any).Promise = Bluebird;
+(mongoose as any).Promise = global.Promise;
 
 class DbManager {
 
-  public static connect(): Mongoose.MongooseThenable {
-    return Mongoose.connect(connUri, {
-      user: process.env.MONGODB_APPLICATION_USER || 'needhelp',
-      pass: process.env.MONGODB_APPLICATION_PASS || '_needhelp_',
-      useMongoClient: true,
-    });
+  public static connect(): mongoose.MongooseThenable {
+    try {
+      return mongoose.connect(connUri, {
+        user: process.env.MONGODB_APPLICATION_USER || 'needhelp',
+        pass: process.env.MONGODB_APPLICATION_PASS || '_needhelp_',
+        useMongoClient: true,
+      });
+    } catch (error) {
+      logger.warn('connet : ', error);
+      throw error;
+    }
   }
 
   private constructor() {}

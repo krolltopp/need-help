@@ -7,14 +7,18 @@ services:
       - 80:3000
     environment:
       - MONGODB_HOST=mongodb
+    depends_on:
+      - mongodb
 
   mongodb:
     image: need-help-mongodb:latest
     ports:
       - 27017:27017
+    volumes:
+      - ./db_data:/data/db
     environment:
-      - MONGODB_ADMIN_USER=admin
-      - MONGODB_ADMIN_PASS=_need_help_
-      - MONGODB_APPLICATION_DATABASE=needhelp
-      - MONGODB_APPLICATION_USER=needhelp
-      - MONGODB_APPLICATION_PASS=_needhelp_
+      - MONGODB_ADMIN_USER
+      - MONGODB_ADMIN_PASS
+      - MONGODB_APPLICATION_DATABASE
+      - MONGODB_APPLICATION_USER
+      - MONGODB_APPLICATION_PASS
